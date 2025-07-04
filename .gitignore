@@ -1,0 +1,8 @@
+# Build files
+build
+devel
+# Other files
+*.deb
+*.run
+*.bkp
+libtorch
