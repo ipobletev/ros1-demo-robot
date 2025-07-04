@@ -18,7 +18,15 @@
     
 ### 3.- Execute
 
-    source devel/setup.
+#### Source
+
+    source devel/setup.bash
+
+#### Simulate RViz
+    roslaunch robot_description rviz.launch
+
+#### Simulate Gazebo
+    roslaunch robot_description gazebo.launch
     
     
 
