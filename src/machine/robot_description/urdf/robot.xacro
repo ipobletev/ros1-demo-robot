@@ -1,9 +1,16 @@
-<link name="base">
-    <visual>
-        <geometry>
-            <box size="0.4 0.4 0.4"/>
-        </geometry>
-        <origin xyz="0 0 -0.2" rpy="0 0 0"/>
-        <material name="blue"/>
-    </visual>
-</link>
+<?xml version="1.0"?>
+
+<robot name="demo_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:property name="box_size" value="0.5" />
+    <xacro:include filename="common_properties.xacro" />
+    
+    <link name="base">
+        <visual>
+            <geometry>
+            <box size="${box_size} ${box_size} ${box_size}"/>
+            </geometry>
+            <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+</robot>

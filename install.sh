@@ -72,3 +72,7 @@ echo ""
 echo "--- Section 4: Python Requirements ---"
 echo "Installing python3-pip..."
 sudo apt install python3-pip -y
+
+# Section 5: Ros Packages Requirements
+sudo apt-get install ros-noetic-rospy -y
+sudo apt-get install ros-noetic-robot-state-publisher -y
