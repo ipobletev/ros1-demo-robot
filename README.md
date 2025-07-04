@@ -17,8 +17,8 @@
     catkin_make
     
 ### 3.- Execute
+
     source devel/setup.
     
-    roslaunch op_blasting_launcher demo.launch ENABLE_HIGHLEVEL:=false ENABLE_PERCEPTION:=false
-
+    
 
