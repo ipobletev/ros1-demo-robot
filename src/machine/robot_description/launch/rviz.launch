@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
- 
+    
+    <!-- Read xacro urdf robot -->
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_description)/urdf/robot.xacro'" />
 
     <!-- send fake joint values -->
