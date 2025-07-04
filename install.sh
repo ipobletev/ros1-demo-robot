@@ -76,3 +76,4 @@ sudo apt install python3-pip -y
 # Section 5: Ros Packages Requirements
 sudo apt-get install ros-noetic-rospy -y
 sudo apt-get install ros-noetic-robot-state-publisher -y
+sudo apt-get install ros-noetic-teleop-twist-keyboard -y

@@ -4,7 +4,7 @@
     <!-- Read xacro urdf robot -->
     <param name="robot_description" command="cat '$(find robot_description)/urdf/robot.xacro'" />
     
-    <!-- Initialize Gazebo in empty world -->
+    <!-- Initialize Gazebo with empty world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
