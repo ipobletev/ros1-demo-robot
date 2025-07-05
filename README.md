@@ -26,8 +26,19 @@
     roslaunch robot_description rviz.launch
 
 #### Simulate Gazebo
-    roslaunch robot_description gazebo.launch
+
+Start Gazebo
     
+    roslaunch gazebo_ros empty_world.launch
+
+Spawn robot in Gazebo
+    
+    roslaunch robot_description spawn.launch
+
+Other option: Gazebo + Spawn Robot
+
+    roslaunch robot_description gazebo.launch
+
 #### Teleoperate
     rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=/part2_cmr/cmd_vel
     

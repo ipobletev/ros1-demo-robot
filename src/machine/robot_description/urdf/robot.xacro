@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-  <!-- Gazebo configuration -->
+<!-- Gazebo configuration -->
   <xacro:include filename="$(find robot_description)/urdf/robot.gazebo.xacro" />
   
-  <!-- Robot configuration -->
+<!-- Robot configuration -->
+
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
@@ -404,6 +404,29 @@
         <cylinder length="0.20" radius="0.03"/>
       </geometry>
       <origin rpy="0.0 0 0" xyz="0 0 0.0"/>
+    </collision>
+  </link>
+
+  <!-- Robot Sensors -->
+  <!-- Camera -->
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.49 -0.03 0.75" rpy="0 0.21 0" />
+    <parent link="base_link"/>
+    <child link="camera_link" />
+  </joint>
+    
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 0 0"/>
     </collision>
   </link>
 
