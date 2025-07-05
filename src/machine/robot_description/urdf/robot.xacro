@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="rosbots" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <!-- Gazebo configuration -->
+    <xacro:include filename="$(find robot_description)/urdf/robot.gazebo.xacro" />
+
+    <!-- Robot configuration -->
     <link name="base_footprint"/>
 
     <joint name="base_joint" type="fixed">
@@ -402,27 +406,5 @@
         <origin rpy="0.0 0 0" xyz="0 0 0.0"/>
       </collision>
     </link>
-
-    <!-- Gazebo configuration -->
-    <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-        <legacyMode>false</legacyMode>
-        <alwaysOn>true</alwaysOn>
-        <publishWheelTF>true</publishWheelTF>
-        <publishTf>1</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <updateRate>100.0</updateRate>
-        <leftJoint>wheel_left_joint</leftJoint>
-        <rightJoint>wheel_right_joint</rightJoint>
-        <wheelSeparation>1.1</wheelSeparation>
-        <wheelDiameter>0.52</wheelDiameter>
-        <wheelAcceleration>1.0</wheelAcceleration>
-        <torque>20</torque>
-        <commandTopic>/part2_cmr/cmd_vel</commandTopic>
-        <odometryTopic>odom</odometryTopic>
-        <odometryFrame>odom</odometryFrame>
-        <robotBaseFrame>base_link</robotBaseFrame>
-    </plugin>
-    </gazebo>
 
 </robot>
