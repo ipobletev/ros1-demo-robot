@@ -62,6 +62,17 @@
     </inertial-->
   </link>
 
+  <xacro:include filename="$(find robot_description)/urdf/arm.xacro" />
+
+  <!-- Conectar la base del brazo (arm_base_link) a la segunda plataforma del robot (base_second_link) -->
+  <joint name="arm_base_connection_joint" type="fixed">
+    <parent link="base_second_link"/>
+    <child link="arm_base_link"/>
+    <!-- Ajusta estos valores xyz/rpy para posicionar el brazo donde desees en la base_second_link -->
+    <!-- Por ejemplo, para colocarlo en el centro de la base_second_link si esta es la superficie superior -->
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/> 
+  </joint>
+  
   <joint name="mcu_joint" type="fixed">
     <origin xyz="0.02 0.12 0.73" rpy="0 0 0" />
     <parent link="base_link"/>
