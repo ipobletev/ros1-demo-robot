@@ -9,6 +9,11 @@ project(robot_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  ros_control
+  controller_manager
+  diff_drive_controller
+  gazebo_ros_control
+  joint_state_controller
 )
 
 ## System dependencies are found with CMake's conventions
