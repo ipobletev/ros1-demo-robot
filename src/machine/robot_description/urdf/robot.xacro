@@ -70,9 +70,9 @@
     <child link="arm_base_link"/>
     <!-- Ajusta estos valores xyz/rpy para posicionar el brazo donde desees en la base_second_link -->
     <!-- Por ejemplo, para colocarlo en el centro de la base_second_link si esta es la superficie superior -->
-    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/> 
+    <origin xyz="0.5 -0.15 0.05" rpy="0 0 0"/> 
   </joint>
-  
+
   <joint name="mcu_joint" type="fixed">
     <origin xyz="0.02 0.12 0.73" rpy="0 0 0" />
     <parent link="base_link"/>
