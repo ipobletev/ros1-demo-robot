@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Incluir propiedades comunes para materiales (ya se incluye en robot.xacro, pero se añade para claridad) -->
+  <!-- Include common properties for materials (already included in robot.xacro, but added for clarity) -->
   <xacro:include filename="$(find robot_a_description)/urdf/common_properties.xacro" />
 
-  <!-- Base del brazo (se conectará a la base del robot principal) -->
+  <!-- Arm base (will connect to the main robot base) -->
   <link name="arm_base_link">
     <visual>
       <geometry>
-        <box size="0.15 0.15 0.03"/> <!-- Base más ancha y plana -->
+        <box size="0.15 0.15 0.03"/> <!-- Wider and flatter base -->
       </geometry>
-      <material name="grey"/> <!-- Usando material de common_properties -->
+      <material name="grey"/> <!-- Using material from common_properties -->
     </visual>
     <collision>
       <geometry>
@@ -26,22 +26,22 @@
     </inertial>
   </link>
 
-  <!-- Articulación del hombro (revolute para rotación horizontal) -->
+  <!-- Shoulder joint (revolute for horizontal rotation) -->
   <joint name="shoulder_joint" type="revolute">
     <parent link="arm_base_link"/>
     <child link="shoulder_link"/>
-    <origin xyz="0 0 0.015" rpy="0 0 0"/> <!-- Posición encima de la base del brazo -->
-    <axis xyz="0 0 1"/> <!-- Rotación alrededor del eje Z (horizontal) -->
+    <origin xyz="0 0 0.015" rpy="0 0 0"/> <!-- Position above the arm base -->
+    <axis xyz="0 0 1"/> <!-- Rotation around the Z-axis (horizontal) -->
     <limit lower="-1.8" upper="1.8" effort="100" velocity="0.5"/>
   </joint>
 
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <cylinder radius="0.05" length="0.25"/> <!-- Cilindro para el segmento del brazo -->
+        <cylinder radius="0.05" length="0.25"/> <!-- Cylinder for the arm segment -->
       </geometry>
-      <origin xyz="0 0 0.125" rpy="0 0 0"/> <!-- Centrar el cilindro para que extienda hacia arriba -->
-      <material name="blue"/> <!-- Color diferente para el segmento -->
+      <origin xyz="0 0 0.125" rpy="0 0 0"/> <!-- Center the cylinder to extend upwards -->
+      <material name="blue"/> <!-- Different color for the segment -->
     </visual>
     <collision>
       <geometry>
@@ -58,19 +58,19 @@
     </inertial>
   </link>
 
-  <!-- Articulación del codo (revolute para rotación vertical) -->
+  <!-- Elbow joint (revolute for vertical rotation) -->
   <joint name="elbow_joint" type="revolute">
     <parent link="shoulder_link"/>
     <child link="elbow_link"/>
-    <origin xyz="0 0 0.25" rpy="0 0 0"/> <!-- En la parte superior del eslabón del hombro -->
-    <axis xyz="0 1 0"/> <!-- Rotación alrededor del eje Y (vertical) -->
+    <origin xyz="0 0 0.25" rpy="0 0 0"/> <!-- At the top of the shoulder link -->
+    <axis xyz="0 1 0"/> <!-- Rotation around the Y-axis (vertical) -->
     <limit lower="-1.8" upper="1.8" effort="100" velocity="0.5"/>
   </joint>
 
   <link name="elbow_link">
     <visual>
       <geometry>
-        <cylinder radius="0.04" length="0.20"/> <!-- Cilindro más pequeño -->
+        <cylinder radius="0.04" length="0.20"/> <!-- Smaller cylinder -->
       </geometry>
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <material name="grey"/>
@@ -90,19 +90,19 @@
     </inertial>
   </link>
 
-  <!-- Articulación de la muñeca (revolute para rotación vertical) -->
+  <!-- Wrist joint (revolute for vertical rotation) -->
   <joint name="wrist_joint" type="revolute">
     <parent link="elbow_link"/>
     <child link="wrist_link"/>
-    <origin xyz="0 0 0.2" rpy="0 0 0"/> <!-- En la parte superior del eslabón del codo -->
-    <axis xyz="0 1 0"/> <!-- Rotación alrededor del eje Y (vertical) -->
+    <origin xyz="0 0 0.2" rpy="0 0 0"/> <!-- At the top of the elbow link -->
+    <axis xyz="0 1 0"/> <!-- Rotation around the Y-axis (vertical) -->
     <limit lower="-1.8" upper="1.8" effort="100" velocity="0.5"/>
   </joint>
 
   <link name="wrist_link">
     <visual>
       <geometry>
-        <cylinder radius="0.03" length="0.08"/> <!-- Cilindro aún más pequeño -->
+        <cylinder radius="0.03" length="0.08"/> <!-- Even smaller cylinder -->
       </geometry>
       <origin xyz="0 0 0.04" rpy="0 0 0"/>
       <material name="blue"/>
@@ -122,17 +122,17 @@
     </inertial>
   </link>
 
-  <!-- Efector final (puede ser un simple cubo o un gripper más complejo) -->
+  <!-- End effector (can be a simple cube or a more complex gripper) -->
   <joint name="end_effector_joint" type="fixed">
     <parent link="wrist_link"/>
     <child link="end_effector_link"/>
-    <origin xyz="0 0 0.08" rpy="0 0 0"/> <!-- Posición al final de la muñeca -->
+    <origin xyz="0 0 0.08" rpy="0 0 0"/> <!-- Position at the end of the wrist -->
   </joint>
 
   <link name="end_effector_link">
     <visual>
       <geometry>
-        <box size="0.06 0.06 0.03"/> <!-- Caja simple para el efector final -->
+        <box size="0.06 0.06 0.03"/> <!-- Simple box for the end effector -->
       </geometry>
       <material name="grey"/>
     </visual>

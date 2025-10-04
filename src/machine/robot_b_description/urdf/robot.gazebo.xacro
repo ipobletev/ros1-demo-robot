@@ -23,11 +23,11 @@
     </plugin>
   </gazebo>
 
-  <!-- Propiedades de Gazebo para las ruedas -->
-  <!-- Ruedas motrices (delanteras): alta fricción para tracción -->
+  <!-- Gazebo properties for the wheels -->
+  <!-- Driving wheels (front): high friction for traction -->
   <gazebo reference="front_left_wheel_link">
-    <kp>1000000.0</kp> <!-- Constante elástica de contacto -->
-    <kd>100.0</kd> <!-- Constante de amortiguación de contacto -->
+    <kp>1000000.0</kp> <!-- Contact stiffness constant -->
+    <kd>100.0</kd> <!-- Contact damping constant -->
     <minDepth>0.001</minDepth>
     <maxVel>1.0</maxVel>
   </gazebo>
@@ -39,7 +39,7 @@
     <maxVel>1.0</maxVel>
   </gazebo>
 
-  <!-- Ruedas pasivas (traseras): muy baja fricción para permitir el deslizamiento lateral durante el giro -->
+  <!-- Passive wheels (rear): very low friction to allow lateral slip during turning -->
   <gazebo reference="back_left_wheel_link">
     <kp>1000000.0</kp>
     <kd>100.0</kd>

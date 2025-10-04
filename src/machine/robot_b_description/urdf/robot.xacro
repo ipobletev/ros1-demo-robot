@@ -7,21 +7,21 @@
   <!-- Gazebo configuration -->
   <xacro:include filename="$(find robot_b_description)/urdf/robot.gazebo.xacro" />
   
-  <!-- Link base_footprint (convención ROS para la base del robot) -->
+  <!-- Link base_footprint (ROS convention for the robot's base) -->
   <link name="base_footprint"/>
 
-  <!-- Joint que conecta base_footprint con base_link -->
+  <!-- Joint connecting base_footprint to base_link -->
   <joint name="base_joint" type="fixed">
     <origin xyz="0 0 0.2" rpy="0 0 0" />
     <parent link="base_footprint"/>
     <child link="base_link" />
   </joint>
   
-  <!-- Link principal del robot (cuerpo central) -->
+  <!-- Main link of the robot (central body) -->
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.6 0.4 0.2"/> <!-- Un cubo simple para la base -->
+        <box size="0.6 0.4 0.2"/> <!-- A simple box for the base -->
       </geometry>
       <material name="grey"/>
     </visual>
@@ -32,28 +32,28 @@
     </collision>
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="10.0"/> <!-- Masa de la base -->
-      <!-- Momentos de inercia para un cubo -->
+      <mass value="10.0"/> <!-- Base mass -->
+      <!-- Inertia moments for a box -->
       <inertia ixx="1.0" ixy="0.0" ixz="0.0"
                iyy="1.0" iyz="0.0"
                izz="1.0"/>
     </inertial>
   </link>
 
-  <!-- Macro para definir una rueda, facilitando la creación de las cuatro -->
+  <!-- Macro to define a wheel, facilitating the creation of all four -->
   <xacro:macro name="wheel" params="prefix parent_link x_offset y_offset z_offset">
     <joint name="${prefix}_wheel_joint" type="continuous">
       <parent link="${parent_link}"/>
       <child link="${prefix}_wheel_link"/>
-      <!-- rpy="-1.570795 0 0" rota la rueda para que el eje Z apunte hacia afuera (horizontal) -->
+      <!-- rpy="-1.570795 0 0" rotates the wheel so that the Z-axis points outward (horizontal) -->
       <origin xyz="${x_offset} ${y_offset} ${z_offset} " rpy="-1.570795 0 0"/> 
-      <axis xyz="0 0 1"/> <!-- El eje de rotación de la rueda es su propio eje Z local -->
+      <axis xyz="0 0 1"/> <!-- The wheel's rotation axis is its own local Z-axis -->
     </joint>
 
     <link name="${prefix}_wheel_link">
       <visual>
         <geometry>
-          <cylinder radius="0.1" length="0.05"/> <!-- Un cilindro para la rueda -->
+          <cylinder radius="0.1" length="0.05"/> <!-- A cylinder for the wheel -->
         </geometry>
         <material name="black"/>
       </visual>
@@ -64,8 +64,8 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0"/>
-        <mass value="0.5"/> <!-- Masa de la rueda -->
-        <!-- Momentos de inercia para un cilindro -->
+        <mass value="0.5"/> <!-- Wheel mass -->
+        <!-- Inertia moments for a cylinder -->
         <inertia ixx="0.002" ixy="0.0" ixz="0.0"
                  iyy="0.002" iyz="0.0"
                  izz="0.002"/>
@@ -73,14 +73,14 @@
     </link>
   </xacro:macro>
 
-  <!-- Instanciamos las cuatro ruedas usando la macro -->
-  <!-- Rueda Delantera Izquierda -->
+  <!-- Instantiate the four wheels using the macro -->
+  <!-- Front Left Wheel -->
   <xacro:wheel prefix="front_left" parent_link="base_link" x_offset="0.2" y_offset="0.225" z_offset="-0.1"/>
-  <!-- Rueda Delantera Derecha -->
+  <!-- Front Right Wheel -->
   <xacro:wheel prefix="front_right" parent_link="base_link" x_offset="0.2" y_offset="-0.225" z_offset="-0.1"/>
-  <!-- Rueda Trasera Izquierda -->
+  <!-- Back Left Wheel -->
   <xacro:wheel prefix="back_left" parent_link="base_link" x_offset="-0.2" y_offset="0.225" z_offset="-0.1"/>
-  <!-- Rueda Trasera Derecha -->
+  <!-- Back Right Wheel -->
   <xacro:wheel prefix="back_right" parent_link="base_link" x_offset="-0.2" y_offset="-0.225" z_offset="-0.1"/>
 
 </robot>
