@@ -4,6 +4,9 @@
   <!-- Common properties - Materials -->
   <xacro:include filename="$(find robot_b_description)/urdf/common_properties.xacro" />
 
+  <!-- Gazebo configuration -->
+  <xacro:include filename="$(find robot_b_description)/urdf/robot.gazebo.xacro" />
+  
   <!-- Link base_footprint (convención ROS para la base del robot) -->
   <link name="base_footprint"/>
 

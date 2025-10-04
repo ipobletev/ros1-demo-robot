@@ -2,7 +2,7 @@
 <launch>
 
     <!-- Read xacro urdf robot -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_a_description)/urdf/robot.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_b_description)/urdf/robot.xacro'" />
 
     <!-- Spawn Robot -->
     <arg name="x" default="0"/>
