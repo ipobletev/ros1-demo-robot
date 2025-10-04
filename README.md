@@ -8,8 +8,8 @@
     sudo snap install code --classic
 
 #### 1.3- Clone Repo and Install 
-    sudo chmod 770 -R install.sh
-    sudo ./install.sh
+    sudo chmod +x install/ros_noetic.sh
+    sudo ./install/ros_noetic.sh
 ---
 ### 2.- Compilation
 
