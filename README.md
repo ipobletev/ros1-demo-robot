@@ -23,24 +23,19 @@
 #### Simulate Gazebo
 
 Start Gazebo
-    
     roslaunch gazebo_ros empty_world.launch
 
 Spawn robot in Gazebo
-    
     roslaunch robot_a_description spawn.launch
 
 Other option: Gazebo + Spawn Robot
-
     roslaunch robot_a_description gazebo.launch
 
 #### Teleoperate
     rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=/part2_cmr/cmd_vel
 
 #### Carga manual de urdf a /robot_a_description
-
     rosparam set robot_a_description "$(xacro $(rospack find robot_a_description)/urdf/robot.xacro)"
 
 #### Visualize TF Tree
-
     rosrun rqt_tf_tree rqt_tf_tree

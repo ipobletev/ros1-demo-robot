@@ -2,7 +2,7 @@
 <launch>
 
     <!-- Read xacro urdf robot -->
-    <param name="robot_a_description" command="$(find xacro)/xacro --inorder '$(find robot_a_description)/urdf/robot.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_a_description)/urdf/robot.xacro'" />
 
     <!-- Spawn Robot -->
     <arg name="x" default="0"/>
@@ -10,6 +10,6 @@
     <arg name="z" default="0.5"/>
 
     <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-          args="-urdf -param robot_a_description -model robot -x $(arg x) -y $(arg y) -z $(arg z)" />
+          args="-urdf -param robot_description -model robot -x $(arg x) -y $(arg y) -z $(arg z)" />
  
 </launch>
