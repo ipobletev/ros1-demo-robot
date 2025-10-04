@@ -41,5 +41,8 @@ Other option: Gazebo + Spawn Robot
 
 #### Teleoperate
     rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=/part2_cmr/cmd_vel
-    
+
+#### Carga manual de urdf a /robot_description
+
+    rosparam set robot_description "$(xacro $(rospack find robot_description)/urdf/robot_b/robot.xacro)"
 

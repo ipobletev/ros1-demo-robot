@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <!-- Cargar la descripción del robot XACRO en el parámetro robot_description -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_description)/urdf/basic_test/robot.xacro'" />
+
+    <!-- Publicar los estados de los joints (con GUI para manipularlos) -->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+        <param name="use_gui" value="true"/>
+    </node>
+    
+    <!-- Publicar las transformaciones de los links del robot -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    
+    <!-- Iniciar Rviz sin una configuración predeterminada (para que la configures manualmente la primera vez) -->
+    <node name="rviz" pkg="rviz" type="rviz"/>
+ 
+</launch>

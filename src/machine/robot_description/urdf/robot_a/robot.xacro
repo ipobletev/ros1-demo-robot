@@ -53,13 +53,16 @@
       </geometry>
       <origin xyz="-0.52 -0.4 0.0" rpy="0 0 0"/>
     </collision>
-    <!--inertial>
-      <origin xyz="0.01 0 0.7"/>
-      <mass value="1.0"/>
+    <inertial>
+      <!-- Si la malla base.dae está centrada en 0,0,0 de su propio archivo,
+          y luego la desplazas con el origin de visual/collision,
+          entonces el centro de masa de esa pieza también estará en ese desplazamiento. -->
+      <origin xyz="-0.52 -0.4 0.0" rpy="0 0 0"/>
+      <mass value="0.5"/> <!-- Ajusta este valor -->
       <inertia ixx="0.01" ixy="0.0" ixz="0.0"
-                iyy="0.01" iyz="0.0" 
-                izz="0.03" />
-    </inertial-->
+              iyy="0.01" iyz="0.0"
+              izz="0.03"/>
+    </inertial>
   </link>
 
   <xacro:include filename="$(find robot_description)/urdf/arm.xacro" />

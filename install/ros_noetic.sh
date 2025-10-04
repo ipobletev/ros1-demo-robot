@@ -72,3 +72,4 @@ echo ""
 echo "--- Section 4: Python Requirements ---"
 echo "Installing python3-pip..."
 sudo apt install python3-pip -y
+sudo apt install python3-roslaunch
