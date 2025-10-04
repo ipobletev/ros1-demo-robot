@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot_b_description</name>
+  <version>0.0.0</version>
+  <description>The robot_b_description package</description>
+  <maintainer email="ismael.pbt@gmail.com">Ismael Poblete</maintainer>
+  <license>MIT</license>
+  <author email="ismael.pbt@gmail.com">Ismael Poblet</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+  <build_depend>controller_manager</build_depend>
+  <build_depend>diff_drive_controller</build_depend>
+  <build_depend>joint_state_controller</build_depend>
+
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>diff_drive_controller</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

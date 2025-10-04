@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <!-- Gazebo configuration -->
-  <xacro:include filename="$(find robot_description)/urdf/robot.gazebo.xacro" />
+  <xacro:include filename="$(find robot_a_description)/urdf/robot.gazebo.xacro" />
   
 <!-- Robot configuration -->
 
@@ -16,13 +16,13 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/base.dae"/>
+        <mesh filename="package://robot_a_description/meshes/base.dae"/>
       </geometry>
       <origin xyz="-0.52 -0.4 0.43" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/base.dae"/>
+        <mesh filename="package://robot_a_description/meshes/base.dae"/>
       </geometry>
       <origin xyz="-0.52 -0.4 0.43" rpy="0 0 0"/>
     </collision>
@@ -43,13 +43,13 @@
   <link name="base_second_link">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/base.dae"/>
+        <mesh filename="package://robot_a_description/meshes/base.dae"/>
       </geometry>
       <origin xyz="-0.52 -0.4 0.0" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/base.dae"/>
+        <mesh filename="package://robot_a_description/meshes/base.dae"/>
       </geometry>
       <origin xyz="-0.52 -0.4 0.0" rpy="0 0 0"/>
     </collision>
@@ -65,7 +65,7 @@
     </inertial>
   </link>
 
-  <xacro:include filename="$(find robot_description)/urdf/arm.xacro" />
+  <xacro:include filename="$(find robot_a_description)/urdf/arm.xacro" />
 
   <!-- Conectar la base del brazo (arm_base_link) a la segunda plataforma del robot (base_second_link) -->
   <joint name="arm_base_connection_joint" type="fixed">
@@ -84,13 +84,13 @@
   <link name="mcu_link">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
+        <mesh filename="package://robot_a_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
       </geometry>
       <origin xyz="0.9 -1.25 0" rpy="0 0 1.57"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
+        <mesh filename="package://robot_a_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
       </geometry>
       <origin xyz="0.9 -1.25 0" rpy="0 0 1.57"/>
     </collision>
@@ -111,13 +111,13 @@
   <link name="mcu_link_1">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
+        <mesh filename="package://robot_a_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
       </geometry>
       <origin xyz="0.9 -1.25 0" rpy="0 0 1.57"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
+        <mesh filename="package://robot_a_description/meshes/rasp.dae" scale="0.14 0.14 0.14"/>
       </geometry>
       <origin xyz="0.9 -1.25 0" rpy="0 0 1.57"/>
     </collision>
@@ -220,13 +220,13 @@
   <link name="batery_link">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/battery.dae" scale="13.0 6.0 6.0"/>
+        <mesh filename="package://robot_a_description/meshes/battery.dae" scale="13.0 6.0 6.0"/>
       </geometry>
       <origin xyz="0 4.5 0.05" rpy="1.57 0 1.57"/>	
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/battery.dae" scale="13.0 6.0 6.0"/>
+        <mesh filename="package://robot_a_description/meshes/battery.dae" scale="13.0 6.0 6.0"/>
       </geometry>
       <origin xyz="0 4.5 0.05" rpy="1.57 0 1.57"/>
     </collision>
@@ -310,7 +310,7 @@
       <geometry>
         <!-- cylinder length="0.0206" radius="0.0550"/-->
         <!--cylinder length="0.20" radius="0.26"/-->
-        <mesh filename="package://robot_description/meshes/wheel.dae" scale="8.0 8.0 8.0"/>
+        <mesh filename="package://robot_a_description/meshes/wheel.dae" scale="8.0 8.0 8.0"/>
       </geometry>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
     </visual>
@@ -339,7 +339,7 @@
     <visual name="visual">
       <geometry>
   <!--cylinder length="0.20" radius="0.26"/-->
-        <mesh filename="package://robot_description/meshes/wheel.dae" scale="8.0 8.0 8.0"/>
+        <mesh filename="package://robot_a_description/meshes/wheel.dae" scale="8.0 8.0 8.0"/>
       </geometry>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
     </visual>
@@ -432,13 +432,13 @@
   <link name="camera_link">
     <visual>
       <geometry>
-        <mesh filename="package://robot_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
+        <mesh filename="package://robot_a_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
       </geometry>
       <origin xyz="0.0 0 0" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://robot_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
+        <mesh filename="package://robot_a_description/meshes/camera.dae" scale="4.0 4.0 4.0"/>
       </geometry>
       <origin xyz="0.0 0 0" rpy="0 0 0"/>
     </collision>

@@ -250,7 +250,7 @@
         <mxCell id="hQQyhzXZu-Ggdtv1am1C-72" value="/joint_states&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;sensor_msgs/JointState&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="2676.5" y="-3696.5" width="114" height="41" as="geometry" />
         </mxCell>
-        <mxCell id="hQQyhzXZu-Ggdtv1am1C-73" value="robot_description" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="hQQyhzXZu-Ggdtv1am1C-73" value="robot_a_description" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="2877" y="-3919" width="110" height="26" as="geometry" />
         </mxCell>
         <mxCell id="hQQyhzXZu-Ggdtv1am1C-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hQQyhzXZu-Ggdtv1am1C-80" target="hQQyhzXZu-Ggdtv1am1C-68">
